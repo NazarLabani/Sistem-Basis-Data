@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7d2df28a-5687-448c-beaf-0e15a071ef18">
+	<property name="ireport.zoom" value="2.5937424601000103"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="332"/>
+	<style name="Crosstab Data Text" hAlign="Center"/>
+	<parameter name="no_pinjam" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT * FROM peminjaman where kd_pinjam=$P{no_pinjam};]]>
+	</queryString>
+	<field name="kd_pinjam" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NIS" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kd_buku" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jumlah" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tgl_pinjam" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="batas_pinjam" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="kd_pinjam">
+		<groupExpression><![CDATA[$F{kd_pinjam}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<line>
+				<reportElement x="15" y="42" width="527" height="1" uuid="e07f0fcc-e72c-401f-a56d-79405581d9ad"/>
+			</line>
+			<staticText>
+				<reportElement x="179" y="10" width="202" height="32" uuid="f2217d2f-02ed-4a69-9716-145d599117fd"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[PERPUSTAKAAN]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField>
+				<reportElement x="144" y="15" width="100" height="20" uuid="e83b38a6-af0b-4acc-8841-5dba8a2e801c"/>
+				<textFieldExpression><![CDATA[$F{kd_pinjam}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="32" y="15" width="100" height="20" uuid="bffefd00-d1e4-4402-9686-763ba84ede5e"/>
+				<text><![CDATA[No Peminjaman :]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="64" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="132" y="23" width="58" height="20" uuid="ca42a28c-fcee-4a38-903d-18954fbc8bf9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{kd_buku}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="132" y="2" width="58" height="20" uuid="a68f4ec8-5a09-47ba-9e7f-6c802b793610"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[No Buku]]></text>
+			</staticText>
+			<line>
+				<reportElement x="15" y="1" width="516" height="1" uuid="a083abc4-73ce-4fec-8623-af26212dd34f"/>
+			</line>
+			<line>
+				<reportElement x="15" y="22" width="514" height="1" uuid="dc9a4f31-ea0f-4612-bd93-9f3e22ed55d8"/>
+			</line>
+			<staticText>
+				<reportElement x="15" y="2" width="66" height="20" uuid="e44420a0-1f3c-46b8-8c34-c3ef7ba63511"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[No Anggota]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="15" y="23" width="64" height="20" uuid="c2bef6ff-1432-4255-81e0-e2f569338b78"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{NIS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="317" y="2" width="85" height="20" uuid="03826af8-484e-4e29-b8c0-2def74261344"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Tanggal Pinjam]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="317" y="22" width="85" height="20" uuid="294addd7-c312-449d-b36e-d11e946a7950"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{tgl_pinjam}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="463" y="23" width="65" height="20" uuid="df697c87-d171-4bcc-bd26-53356e991044"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{batas_pinjam}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="460" y="2" width="68" height="20" uuid="f8bec77c-90c7-4777-b291-aeea5a6bd59b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Batas Pinjam]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="232" y="2" width="49" height="20" uuid="afab1979-b4ce-4c9d-93f6-e7a2c5388d22"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Jumlah]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="232" y="23" width="49" height="20" uuid="40c7084b-1448-4dd7-be2b-8eabf3f8644a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{jumlah}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

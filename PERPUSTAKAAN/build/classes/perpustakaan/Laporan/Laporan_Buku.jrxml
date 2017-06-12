@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7d2df28a-5687-448c-beaf-0e15a071ef18">
+	<property name="ireport.zoom" value="1.4641000000000064"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Crosstab Data Text" hAlign="Center"/>
+	<queryString>
+		<![CDATA[SELECT buku.kd_buku,
+buku.judul_buku,
+buku.pengarang,
+buku.penerbit,
+buku.tahun_buku,
+buku.jumlah
+from buku;]]>
+	</queryString>
+	<field name="kd_buku" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="judul_buku" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pengarang" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="penerbit" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tahun_buku" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jumlah" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="kd_pinjam">
+		<groupExpression><![CDATA[]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<line>
+				<reportElement x="15" y="42" width="527" height="1" uuid="e07f0fcc-e72c-401f-a56d-79405581d9ad"/>
+			</line>
+			<staticText>
+				<reportElement x="178" y="11" width="202" height="32" uuid="f2217d2f-02ed-4a69-9716-145d599117fd"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[PERPUSTAKAAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="144" y="47" width="272" height="32" uuid="d1293d8d-45d2-4d01-ba5c-a7da18cc2851"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DATA BUKU]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<frame>
+				<reportElement x="361" y="91" width="100" height="20" uuid="5ce64e90-567f-4e18-9b29-159549b3a0d2"/>
+			</frame>
+			<elementGroup>
+				<line>
+					<reportElement x="17" y="1" width="514" height="1" uuid="a083abc4-73ce-4fec-8623-af26212dd34f"/>
+				</line>
+				<staticText>
+					<reportElement x="15" y="2" width="58" height="20" uuid="a68f4ec8-5a09-47ba-9e7f-6c802b793610"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[No Buku]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="296" y="2" width="63" height="20" uuid="b30ec4bf-b962-4673-8591-d93c24dd5c2b"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Penerbit]]></text>
+				</staticText>
+				<line>
+					<reportElement x="15" y="22" width="514" height="1" uuid="dc9a4f31-ea0f-4612-bd93-9f3e22ed55d8"/>
+				</line>
+				<staticText>
+					<reportElement x="480" y="2" width="49" height="21" uuid="7f6b158b-76fc-47eb-9c0b-80d1dcd2e21a"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Jumlah]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="208" y="1" width="75" height="22" uuid="b00bad3e-be0d-425d-96f2-1d9ecbdb71bb"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Pengarang]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="380" y="1" width="49" height="22" uuid="ac689c9e-3969-4619-82d1-5c707570d10c"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Tahun Buku]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="95" y="2" width="94" height="21" uuid="afab1979-b4ce-4c9d-93f6-e7a2c5388d22"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<text><![CDATA[Judul Buku]]></text>
+				</staticText>
+			</elementGroup>
+			<textField>
+				<reportElement x="296" y="23" width="63" height="20" uuid="2091677f-21eb-4889-bded-c08835ffe9db"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{penerbit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="23" width="49" height="20" uuid="57535915-30cd-4862-bc32-1a01f05c8986"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{tahun_buku}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="95" y="23" width="94" height="20" uuid="40c7084b-1448-4dd7-be2b-8eabf3f8644a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{judul_buku}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="15" y="23" width="58" height="20" uuid="4551d603-24d2-4034-9d9a-1f01cb2e145a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{kd_buku}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="23" width="49" height="20" uuid="213509e1-7d80-4a7e-b31c-d1a2f527b233"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{jumlah}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="208" y="23" width="75" height="20" uuid="49b7f7f8-66b3-4da5-9a41-96f7adedc8d9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{pengarang}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
